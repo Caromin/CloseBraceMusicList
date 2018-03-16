@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "test": "jest"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -18,5 +19,9 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^4.0.0",
     "serve-favicon": "~2.4.5"
+  },
+  "devDependencies": {
+    "jest": "^22.4.2",
+    "supertest": "^3.0.0"
   }
 }

@@ -10,6 +10,7 @@ const LocalStrategy = require('passport-local').Strategy;
 
 const index = require('./routes/index');
 const api = require('./routes/api/index');
+const users = require('./routes/api/users');
 
 const app = express();
 
@@ -38,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 // so this is any route after /api---->/<-----
 app.use('/api', api);
+app.use('/api/users', users);
 //configure passport
 const User = require('./models/user');
 passport.use(new LocalStrategy(User.authenticate()));
