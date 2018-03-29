@@ -72,7 +72,7 @@ module.exports = {
 // }
 
 // If not in production mode than will put thesee entry commands in unshift(front)
-// It will go to entry, if not it will not get put into entry 
+// It will go to entry, if not it will not get put into entry
 if (process.env.NODE_ENV !== 'production') {
   module.exports.entry.unshift(
     'react-hot-loader/patch',
