@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const cssOutputLocation = process.env.NODE_ENV === 'production' ?
   'public/stylesheets/style-prod.css' :
-  'stylehsheets/style.css';
+  'stylesheets/style.css';
 
 const jsProdOutput = {
   filename: 'public/javascripts/build-prod.js',
