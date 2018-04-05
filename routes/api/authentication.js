@@ -52,13 +52,19 @@ router.post('/register', (req, res) => {
   });
 
   // Save, via passport's "register" method, the user
-  User.register(newUser, req.body.password, (err, user) => {
+  User.register(newUser, req.body.password, (err) => {
     // If there's a problem, send back a JSON object with the error
     if (err) {
       return res.send(JSON.stringify({ error: err }));
     }
-    // Otherwise, for now, send back a JSON object with the new user's info
-    return res.send(JSON.stringify(user));
+    // otherwise log them in
+    return passport.authenticate('local')(req, res, () => {
+      if (req.user) {
+        return res.send(JSON.stringify(req.user));
+      }
+      // Otherwise, for now, send back a JSON object with the new user's info
+      return res.send(JSON.stringify({ error: 'There was an error logging in'}));
+    });
   });
 });
 
