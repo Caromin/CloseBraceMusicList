@@ -90,6 +90,7 @@ export class LoginPageContainer extends React.Component {
   }
 }
 
+// These are actions that can be accessed in this component
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     incrementProgressAction: incrementProgress,
