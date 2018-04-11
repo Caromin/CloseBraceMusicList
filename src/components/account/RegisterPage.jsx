@@ -34,7 +34,7 @@ export default class ProfilePage extends React.Component {
     }
   }
 
-  // Handle submission once all form data is valid
+  // Put everything together and send it up to the register function
   handleValidSubmit() {
     const { registerFunction } = this.props;
     const formData = this.state;
@@ -80,10 +80,14 @@ export default class ProfilePage extends React.Component {
               />
               <AvFeedback>Passwords must be at least eight characters in length</AvFeedback>
               <span>
-                We recommend a password service like 
-                <a href="https://www.lastpass.com/&quot;" target="_blank" rel="noopener noreferrer">LastPass</a>
-                 or <a href="https://1password.com/&quot;" target="_blank" rel="noopener
-noreferrer">1Password</a>
+                We recommend a password service like
+                <a href="https://www.lastpass.com/" target="_blank" rel="noopener noreferrer">LastPass</a>
+                 or <a
+                   href="https://1password.com/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                 >1Password
+                    </a>
               </span>
             </AvGroup>
 

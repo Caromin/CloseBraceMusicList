@@ -1,5 +1,5 @@
 import React from 'react';
-import { AvForm, AvGroup, AvInput, AvFeedback } from 'availity-reactstrap-validation';
+import { AvForm, AvField, AvGroup, AvInput, AvFeedback } from 'availity-reactstrap-validation';
 import { Button, Label } from 'reactstrap';
 
 export default class LoginPage extends React.Component {
@@ -45,7 +45,8 @@ export default class LoginPage extends React.Component {
     return (
       <div className="row justify-content-center">
         <div className="col-10 col-sm-7 col-md-5 col-lg-4">
-          <AvForm onValidSubmit={this.handleValidSubmit} >
+          <AvForm onValidSubmit={this.handleValidSubmit}>
+            {/* <AvField name="exampleEmail" label="Email" required /> */}
             <AvGroup>
               <Label for="exampleEmail">Email</Label>
               <AvInput
