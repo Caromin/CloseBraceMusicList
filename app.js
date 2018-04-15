@@ -20,10 +20,14 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 
 const User = require('./models/user');
-const index = require('./routes/index');
+
+// Route Files
 const api = require('./routes/api/index');
-const users = require('./routes/api/users');
+const albums = require('./routes/api/albums');
 const authentication = require('./routes/api/authentication');
+const index = require('./routes/index');
+const users = require('./routes/api/users');
+
 
 const app = express();
 
@@ -33,7 +37,6 @@ mongoose.connect('mongodb://localhost/musiclist');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -63,8 +66,9 @@ if (process.env.NODE_ENV !== 'production') {
 
 // so this is any route after /api---->/<-----
 app.use('/api', api);
-app.use('/api/users', users);
+app.use('api/albums', albums);
 app.use('/api/authentication', authentication);
+app.use('/api/users', users);
 app.use('/*', index);
 
 // configure passport
