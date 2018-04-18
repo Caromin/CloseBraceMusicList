@@ -66,7 +66,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 // so this is any route after /api---->/<-----
 app.use('/api', api);
-app.use('api/albums', albums);
+app.use('/api/albums', albums);
 app.use('/api/authentication', authentication);
 app.use('/api/users', users);
 app.use('/*', index);
