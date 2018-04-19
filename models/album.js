@@ -3,11 +3,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Album = new Schema({
-  title: String,
-  discogId: Number,
   artists: [Schema.Types.Mixed],
-  thumb: String,
   country: String,
+  discogsId: { type: Number, unique: true },
   formats: [Schema.Types.Mixed],
   genres: [Schema.Types.Mixed],
   images: [Schema.Types.Mixed],
@@ -15,6 +13,8 @@ const Album = new Schema({
   notes: String,
   released: String,
   styles: [String],
+  thumb: String,
+  title: String,
   tracklist: [Schema.Types.Mixed],
   year: Number,
 });
